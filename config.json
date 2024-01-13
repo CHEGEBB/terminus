@@ -1,0 +1,114 @@
+{
+  "commands": [
+    {
+      "command": "open google",
+      "script": "open_google.py",
+      "description": "Open Google in the web browser"
+    },
+    {
+      "command": "open youtube",
+      "script": "open_youtube.py",
+      "description": "Open YouTube in the web browser"
+    },
+    {
+      "command": "make a directory",
+      "script": "make_directory.py",
+      "description": "Create a new directory"
+    },
+    {
+      "command": "remove a directory",
+      "script": "remove_directory.py",
+      "description": "Remove an existing directory"
+    },
+    {
+      "command": "make a file",
+      "script": "make_file.py",
+      "description": "Create a new file"
+    },
+    {
+      "command": "remove a file",
+      "script": "remove_file.py",
+      "description": "Remove an existing file"
+    },
+    {
+      "command": "change directory",
+      "script": "change_directory.py",
+      "description": "Change the current working directory"
+    },
+    {
+      "command": "list files",
+      "script": "list_files.py",
+      "description": "List files in the current directory"
+    },
+    {
+      "command": "list all files",
+      "script": "list_all_files.py",
+      "description": "List all files, including hidden ones, in the current directory"
+    },
+    {
+      "command": "list files long",
+      "script": "list_files_long.py",
+      "description": "List files in the current directory with detailed information"
+    },
+    {
+      "command": "list all files long",
+      "script": "list_all_files_long.py",
+      "description": "List all files, including hidden ones, in the current directory with detailed information"
+    },
+    {
+      "command": "copy a file",
+      "script": "copy_file.py",
+      "description": "Copy a file to a new location"
+    },
+    {
+      "command": "move a file",
+      "script": "move_file.py",
+      "description": "Move a file to a new location"
+    },
+    {
+      "command": "copy a directory",
+      "script": "copy_directory.py",
+      "description": "Copy a directory to a new location"
+    },
+    {
+      "command": "move a directory",
+      "script": "move_directory.py",
+      "description": "Move a directory to a new location"
+    },
+    {
+      "command": "rename a file",
+      "script": "rename_file.py",
+      "description": "Rename an existing file"
+    },
+    {
+      "command": "rename a directory",
+      "script": "rename_directory.py",
+      "description": "Rename an existing directory"
+    },
+    {
+      "command": "open a file",
+      "script": "open_file.py",
+      "description": "Open a file with the default application"
+    },
+    {
+      "command": "open a directory",
+      "script": "open_directory.py",
+      "description": "Open a directory with the default file manager"
+    },
+    {
+      "command": "open with",
+      "script": "open_with.py",
+      "description": "Open a file with a specified application"
+    },
+    {
+      "command": "find a file",
+      "script": "find_file.py",
+      "description": "Search for a file in the current directory"
+    },
+    {
+      "command": "find a directory",
+      "script": "find_directory.py",
+      "description": "Search for a directory in the current directory"
+    }
+  ]
+}
