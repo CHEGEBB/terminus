@@ -71,11 +71,11 @@ python3 main.py
 3. **Open Gmail:** Open Gmail
 4. **Open GitHub:** Open GitHub
 5. **Open Stack Overflow:** Open Stack Overflow
-Open WhatsApp: Open WhatsApp
-Open Commands Folder: Open Commands Folder
-Open Terminal: Open Terminal
-Open Text Editor: Open Text Editor
-Open File Manager: Open File Manager
+6 **Open WhatsApp:** Open WhatsApp
+7 **Open Commands Folder:** Open Commands Folder
+8. **Open Terminal:** Open Terminal
+9. **Open Text Editor:** Open Text Editor
+10. **Open File Manager:** Open File Manager
 Configure Voice Commands: Configure Voice Commands
 Display System Information: Display System Information
 Open Chatbot: Open Chatbot
