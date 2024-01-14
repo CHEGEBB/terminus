@@ -1,0 +1,10 @@
+[
+    {
+        "description": "Sample Reminder 1",
+        "due_date": "2024-01-15 10:00:00"
+    },
+    {
+        "description": "Sample Reminder 2",
+        "due_date": "2024-01-16 15:30:00"
+    }
+]

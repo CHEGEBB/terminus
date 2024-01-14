@@ -31,7 +31,7 @@ Terminus is a Python-based voice-controlled terminal assistant designed to make 
 
 3. **Run Terminus:**
     ```bash
-    python3 terminus.py
+    python terminus.py
     ```
 
 ## Usage 🗣️

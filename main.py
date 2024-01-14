@@ -1,35 +1,17 @@
+# main.py
+
 import os
 import json
-import time
 import webbrowser
 import sys
 import speech_recognition as sr
 import pyttsx3
-from commands import mkdir
-from commands import rmdir
-from commands import mkfile
-from commands import rmfile
-from commands import cd
-from commands import ls
-from commands import lsa
-from commands import lsl
-from commands import lsla
-from commands import cpfile
-from commands import mvfile
-from commands import cpdir
-from commands import mvdir
-from commands import rnfile
-from commands import rndir
-from commands import openfile
-from commands import opendir
-from commands import openwith
-from commands import findfile
-from commands import finddir
+from commands import mkdir, rmdir, mkfile, rmfile, cd, ls, lsa, lsl, lsla, cpfile, mvfile, cpdir, mvdir, rnfile, rndir, openfile, opendir, openwith, findfile, finddir
+from utils import system_info, web_search, automation, reminders,  text_to_speech, translation, weather, file_operations, chatbot, media_control, task_automation, learning
 
-# Initializing pyttsx3
+# Initializing pyttsx3 and speech recognition
 engine = pyttsx3.init()
-# Initializing speech recognition
-r = sr.Recognizer()
+recognizer = sr.Recognizer()
 
 def speak(audio):
     engine.say(audio)
@@ -39,10 +21,10 @@ def take_command():
     try:
         with sr.Microphone() as source:
             print("Listening...")
-            r.pause_threshold = 1
-            audio = r.listen(source)
+            recognizer.pause_threshold = 1
+            audio = recognizer.listen(source)
             print("Recognizing...")
-            query = r.recognize_google(audio, language='en-in')
+            query = recognizer.recognize_google(audio, language='en-in')
             print(query)
     except Exception as e:
         print(e)
@@ -50,28 +32,22 @@ def take_command():
         return "None"
     return query.lower()
 
-def wish_me():
-    speak("Hello! I am Terminus, your terminal voice assistant.")
-    speak("To activate me, say 'Hello Terminus'.")
-    print("To activate, say 'Hello Terminus'.")
-    while True:
-        query = take_command().lower()
-        if 'hello terminus' in query:
-            break
-
-    speak("May I know your name?")
-    user_name = take_command().capitalize()  # Assuming the user responds with their name
-    speak(f"Nice to meet you, {user_name}!")
-
-    hour = int(time.strftime("%H"))
-    if 0 <= hour < 12:
-        speak("Good Morning!")
-    elif 12 <= hour < 18:
-        speak("Good Afternoon!")
+def execute_command(command_name, args):
+    # Execute the selected command
+    script_path = os.path.join('commands', f"{command_name}.py")
+    if os.path.exists(script_path):
+        try:
+            # Dynamically import and execute the command
+            command_module = __import__(f'commands.{command_name}')
+            command_module.execute_command(args)
+            speak("Command executed successfully")
+        except Exception as e:
+            print(f"Error: {e}")
+            speak("Command not executed successfully")
     else:
-        speak("Good Evening!")
+        speak("Command not found")
 
-    speak(f"How may I assist you, {user_name}?")
+        
 
 def open_google():
     speak("Opening Google")
@@ -99,7 +75,7 @@ def open_whatsapp():
 
 def open_commands_folder():
     speak("Opening Commands Folder")
-    path = '/ACCESSIBLE_TERMINAL/commands'
+    path = 'commands'  # Adjust the path based on your actual directory structure
     os.chdir(path)
     
     # List available commands
@@ -112,63 +88,7 @@ def open_commands_folder():
     query = take_command().lower()  # Convert the query to lowercase
 
     # Execute the selected command
-    if 'make a directory' in query:
-        execute_command('mkdir', query.split())
-    elif 'remove a directory' in query:
-        execute_command('rmdir', query.split())
-    elif 'make a file' in query:
-        execute_command('mkfile', query.split())
-    elif 'remove a file' in query:
-        execute_command('rmfile', query.split())
-    elif 'change directory' in query:
-        execute_command('cd', query.split())
-    elif 'list files' in query:
-        execute_command('ls', query.split())
-    elif 'list all files' in query:
-        execute_command('lsa', query.split())
-    elif 'list files long' in query:
-        execute_command('lsl', query.split())
-    elif 'list all files long' in query:
-        execute_command('lsla', query.split())
-    elif 'copy a file' in query:
-        execute_command('cpfile', query.split())
-    elif 'move a file' in query:
-        execute_command('mvfile', query.split())
-    elif 'copy a directory' in query:
-        execute_command('cpdir', query.split())
-    elif 'move a directory' in query:
-        execute_command('mvdir', query.split())
-    elif 'rename a file' in query:
-        execute_command('rnfile', query.split())
-    elif 'rename a directory' in query:
-        execute_command('rndir', query.split())
-    elif 'open a file' in query:
-        execute_command('openfile', query.split())
-    elif 'open a directory' in query:
-        execute_command('opendir', query.split())
-    elif 'open with' in query:
-        execute_command('openwith', query.split())
-    elif 'find a file' in query:
-        execute_command('findfile', query.split())
-    elif 'find a directory' in query:
-        execute_command('finddir', query.split())
-    else:
-        speak("Command not found")
-
-def execute_command(command_name, args):
-    # Execute the selected command
-    script_path = os.path.join('commands', f"{command_name}.py")
-    if os.path.exists(script_path):
-        try:
-            # Dynamically import and execute the command
-            command_module = __import__(f'commands.{command_name}')
-            command_module.execute_command(args)
-            speak("Command executed successfully")
-        except Exception as e:
-            print(f"Error: {e}")
-            speak("Command not executed successfully")
-    else:
-        speak("Command not found")
+    execute_command(query.split()[0], query.split())
 
 def open_terminal():
     speak("Opening Terminal")
@@ -244,10 +164,39 @@ def command_not_executed():
 def command_not_found():
     speak("Command Not Found")
 
+def execute_system_info():
+    sys_info = system_info.SystemInfo()
+    sys_info.display_system_info()
+
+def execute_chatbot():
+    chat_bot = chatbot.ChatBot()  # Corrected class name
+    chat_bot.main_loop()
+
+def execute_web_search(query):
+    speak("Where would you like me to search? Wikipedia or Google?")
+    choice = take_command().lower()
+
+    if 'wikipedia' in choice:
+        web_search.search_wikipedia(query)
+    elif 'google' in choice:
+        web_search.search_google(query)
+    else:
+        speak("Invalid choice. Please say 'Wikipedia' or 'Google'.")
+def execute_weather():
+    speak("Fetching weather information...")
+    os.system('python3 commands/weather.py')  # Run weather.py as a separate process
+    command_executed()
+
+def execute_translation():
+    translation.main()
+
 if __name__ == "__main__":
-    wish_me()
+    speak("Hello! I am Terminus, your terminal voice assistant.")
+    speak("How may I assist you?")
+    
     while True:
         query = take_command().lower()
+
         if 'open google' in query:
             open_google()
             command_executed()
@@ -281,8 +230,27 @@ if __name__ == "__main__":
         elif 'configure voice commands' in query:
             configure_voice_commands()
             command_executed()
+        elif 'display system information' in query or 'system info' in query:
+            execute_system_info()
+            command_executed()
+        elif 'open chatbot' in query:
+            execute_chatbot()
+            command_executed()
+        elif 'search' in query or 'what is' in query or 'tell me about' in query:
+            speak("What do you want to search for?")
+            search_query = take_command().lower()
+            execute_web_search(search_query)
+            command_executed()
+        elif 'weather' in query or 'forecast' in query:
+             weather.main()  # Call the main function from weather.py
+             command_executed()
+
+        elif 'translate' in query:
+            execute_translation()
+            command_executed()
         elif 'exit' in query:
             speak("Thank You")
             sys.exit()
         else:
             command_not_found()
+            speak("What else can I help you with?")
