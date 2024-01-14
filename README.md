@@ -87,7 +87,8 @@ python3 main.py
 ## Contributing 🤝
 Contributions are welcome! If you have ideas for improvements or new features, feel free to open an issue or submit a pull request.
 
-Written by CHEGEBB 🖋️
+## Written by
+**CHEGEBB 🖋️**
 
 Acknowledgements 🙌:
 Special thanks to the creators of speech_recognition and pyttsx3 for their fantastic libraries.
