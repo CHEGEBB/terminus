@@ -49,9 +49,9 @@ python3 main.py
 
 - **Terminal Commands:** Execute various terminal operations by stating commands like `"Make a directory," "List files,"` etc.
 
-- **Web Browsing:** Open websites like Google, YouTube, etc., with voice commands such as "Open Google."
+- **Web Browsing:** Open websites like Google, YouTube, etc., with voice commands such as `"Open Google."`
 
-Weather Information: Get the latest weather updates by saying "Weather" or "Forecast."
+- **Weather Information:** Get the latest weather updates by saying `"Weather" or "Forecast."`
 
 Language Translation: Translate text from one language to another by using the "Translate" command.
 
