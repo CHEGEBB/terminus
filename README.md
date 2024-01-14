@@ -1,7 +1,7 @@
-Terminus - Your Multi-Functional Voice-Controlled Assistant 🎙️🤖
+# Terminus - Your Multi-Functional Voice-Controlled Assistant 🎙️🤖
 Terminus is an advanced Python-based voice-controlled assistant designed to streamline your interaction with both the terminal and various online services. This versatile assistant leverages voice commands to perform tasks ranging from executing terminal commands to providing weather forecasts, translating languages, and more.
 
-Note: Terminus is continuously evolving! Some features may still be in development, and we welcome contributions to enhance the project. Join us in making Terminus even more powerful!
+**Note:** Terminus is continuously evolving! Some features may still be in development, and we welcome contributions to enhance the project. Join us in making Terminus even more powerful!
 
 Features 🚀
 Voice Recognition: Terminus uses the speech_recognition library to capture voice input, allowing for easy and natural interactions.
