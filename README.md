@@ -33,9 +33,11 @@ cd terminus
 ```
 **Install dependencies:**
 
-bash
-Copy code
+
+**Copy code**
+```bash
 pip install -r requirements.txt
+```
 Run Terminus:
 
 bash
