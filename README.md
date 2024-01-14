@@ -18,7 +18,7 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 
 - **Language Translation:** Translate text from one language to another with ease using voice commands.
 
-Reminders: Set and manage reminders effortlessly through voice commands.
+- Reminders: Set and manage reminders effortlessly through voice commands.
 
 System Information: Access detailed information about your system with voice-activated queries.
 
