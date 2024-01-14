@@ -10,9 +10,9 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 
 - **Terminal Commands:** Execute various terminal operations such as creating directories, removing files, listing files, copying/moving files and directories, renaming files/directories, and more.
 
-- **Web Browsing:** Open popular websites like Google, YouTube, Gmail, GitHub, Stack Overflow, and WhatsApp using simple voice commands.
+- **Web Browsing:** Open popular websites like ` Google, YouTube, Gmail, GitHub, Stack Overflow, and WhatsApp` using simple voice commands.
 
-Dynamic Command Execution: Terminus dynamically imports and executes commands based on your voice input, making it extensible and customizable.
+- **Dynamic Command Execution:** Terminus dynamically imports and executes commands based on your voice input, making it extensible and customizable.
 
 Weather Information: Get real-time weather forecasts for your location with a simple voice command.
 
