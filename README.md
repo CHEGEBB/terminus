@@ -68,9 +68,9 @@ python3 main.py
 ## Available Voice Commands 🎤
 1. **Open Google:** Open Google
 2. **Open YouTube:** Open YouTube
-Open Gmail: Open Gmail
-Open GitHub: Open GitHub
-Open Stack Overflow: Open Stack Overflow
+3. **Open Gmail:** Open Gmail
+4. **Open GitHub:** Open GitHub
+5. **Open Stack Overflow:** Open Stack Overflow
 Open WhatsApp: Open WhatsApp
 Open Commands Folder: Open Commands Folder
 Open Terminal: Open Terminal
