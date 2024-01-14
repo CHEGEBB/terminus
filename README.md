@@ -46,9 +46,8 @@ Copy code
 python3 main.py
 ```
 ## Usage 🗣️
-Wake-Up Command: Start Terminus by saying "Hello Terminus."
 
-Terminal Commands: Execute various terminal operations by stating commands like "Make a directory," "List files," etc.
+- **Terminal Commands:** Execute various terminal operations by stating commands like "Make a directory," "List files," etc.
 
 Web Browsing: Open websites like Google, YouTube, etc., with voice commands such as "Open Google."
 
