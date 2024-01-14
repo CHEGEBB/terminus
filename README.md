@@ -25,8 +25,9 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 ## Getting Started 🚦
 **Clone the repository:**
 
-bash
-Copy code
+
+*Copy code*
+```bash
 git clone https://github.com/your-username/terminus.git
 cd terminus
 Install dependencies:
