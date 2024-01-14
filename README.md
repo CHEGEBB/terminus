@@ -53,17 +53,17 @@ python3 main.py
 
 - **Weather Information:** Get the latest weather updates by saying `"Weather" or "Forecast."`
 
-Language Translation: Translate text from one language to another by using the "Translate" command.
+- **Language Translation:** Translate text from one language to another by using the "Translate" command.
 
-Reminders: Set reminders by stating "Set a reminder for...," and manage them with voice commands.
+- **Reminders:** Set reminders by stating `"Set a reminder for...,"` and manage them with voice commands.
 
-System Information: Retrieve detailed system information by saying "Display system information."
+- **System Information:** Retrieve detailed system information by saying `"Display system information."`
 
-Chatbot Interaction: Engage with Terminus's chatbot capabilities by saying "Open Chatbot."
+- **Chatbot Interaction:** Engage with Terminus's chatbot capabilities by saying `"Open Chatbot."`
 
-Search: Perform searches on Wikipedia or Google by stating commands like "Search for...," "What is...," or "Tell me about..."
+- **Search:** Perform searches on Wikipedia or Google by stating commands like `"Search for...,"` `"What is...,"` or `"Tell me about..."`
 
-Exit: End the session by saying "Thank You" or "Exit."
+- **Exit:** End the session by saying "Thank You" or "Exit."
 
 Available Voice Commands 🎤
 Open Google: Open Google
