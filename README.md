@@ -84,7 +84,7 @@ python3 main.py
 - **Translate:** `Translate`
 - **Set Reminder:** `Set a reminder for...`
   
-Contributing 🤝
+## Contributing 🤝
 Contributions are welcome! If you have ideas for improvements or new features, feel free to open an issue or submit a pull request.
 
 Written by CHEGEBB 🖋️
