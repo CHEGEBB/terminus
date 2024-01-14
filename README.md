@@ -66,8 +66,8 @@ python3 main.py
 - **Exit:** End the session by saying "Thank You" or "Exit."
 
 ## Available Voice Commands 🎤
-- **Open Google:** Open Google
-- **Open YouTube:** Open YouTube
+1. **Open Google:** Open Google
+2. **Open YouTube:** Open YouTube
 Open Gmail: Open Gmail
 Open GitHub: Open GitHub
 Open Stack Overflow: Open Stack Overflow
