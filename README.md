@@ -40,10 +40,12 @@ pip install -r requirements.txt
 ```
 **Run Terminus:**
 
-bash
+
 Copy code
-python main.py
-Usage 🗣️
+```bash
+python3 main.py
+```
+## Usage 🗣️
 Wake-Up Command: Start Terminus by saying "Hello Terminus."
 
 Terminal Commands: Execute various terminal operations by stating commands like "Make a directory," "List files," etc.
