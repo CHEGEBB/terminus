@@ -3,7 +3,7 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 
 **Note:** Terminus is continuously evolving! Some features may still be in development, and we welcome contributions to enhance the project. Join us in making Terminus even more powerful!
 
-Features 🚀
+## Features 🚀
 Voice Recognition: Terminus uses the speech_recognition library to capture voice input, allowing for easy and natural interactions.
 
 Text-to-Speech: With the pyttsx3 library, Terminus responds to your commands with clear and natural-sounding speech, ensuring a seamless user experience.
