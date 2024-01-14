@@ -90,7 +90,7 @@ Contributions are welcome! If you have ideas for improvements or new features, f
 ## Written by
 **CHEGEBB 🖋️**
 
-Acknowledgements 🙌:
+## Acknowledgements 🙌:
 Special thanks to the creators of speech_recognition and pyttsx3 for their fantastic libraries.
 
-Happy coding with Terminus! 🚀🔊
+## Happy coding with Terminus! 🚀🔊
