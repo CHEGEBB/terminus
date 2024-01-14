@@ -16,7 +16,7 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 
 - **Weather Information:** Get real-time weather forecasts for your location with a simple voice command.
 
-- Language Translation: Translate text from one language to another with ease using voice commands.
+- **Language Translation: Translate text from one language to another with ease using voice commands.
 
 Reminders: Set and manage reminders effortlessly through voice commands.
 
