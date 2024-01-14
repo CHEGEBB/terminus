@@ -38,7 +38,7 @@ cd terminus
 ```bash
 pip install -r requirements.txt
 ```
-Run Terminus:
+**Run Terminus:**
 
 bash
 Copy code
