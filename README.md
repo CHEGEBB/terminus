@@ -23,7 +23,7 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 - **System Information:** Access detailed information about your system with voice-activated queries.
 
 ## Getting Started 🚦
-Clone the repository:
+** Clone the repository:**
 
 bash
 Copy code
