@@ -76,9 +76,9 @@ python3 main.py
 8. **Open Terminal:** Open Terminal
 9. **Open Text Editor:** Open Text Editor
 10. **Open File Manager:** Open File Manager
-Configure Voice Commands: Configure Voice Commands
-Display System Information: Display System Information
-Open Chatbot: Open Chatbot
+11. **Configure Voice Commands:** Configure Voice Commands
+12. **Display System Information:** Display System Information
+13. **Open Chatbot:** Open Chatbot
 Search on Wikipedia or Google: Search for..., What is..., Tell me about...
 Weather: Weather, Forecast
 Translate: Translate
