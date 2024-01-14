@@ -79,11 +79,11 @@ python3 main.py
 11. **Configure Voice Commands:** Configure Voice Commands
 12. **Display System Information:** Display System Information
 13. **Open Chatbot:** Open Chatbot
-Search on Wikipedia or Google: Search for..., What is..., Tell me about...
-Weather: Weather, Forecast
-Translate: Translate
-Set Reminder: Set a reminder for...
-Exit: Thank You, Exit
+- **Search on Wikipedia or Google:**  `Search for..., What is..., Tell me about...`
+- **Weather:** `Weather, Forecast`
+- **Translate:** `Translate`
+- **Set Reminder:** `Set a reminder for...`
+  
 Contributing 🤝
 Contributions are welcome! If you have ideas for improvements or new features, feel free to open an issue or submit a pull request.
 
