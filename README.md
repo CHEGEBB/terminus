@@ -8,7 +8,7 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 
 - **Text-to-Speech:** With the `pyttsx3 `library, Terminus responds to your commands with clear and natural-sounding speech, ensuring a seamless user experience.
 
-Terminal Commands: Execute various terminal operations such as creating directories, removing files, listing files, copying/moving files and directories, renaming files/directories, and more.
+- **Terminal Commands:** Execute various terminal operations such as creating directories, removing files, listing files, copying/moving files and directories, renaming files/directories, and more.
 
 Web Browsing: Open popular websites like Google, YouTube, Gmail, GitHub, Stack Overflow, and WhatsApp using simple voice commands.
 
