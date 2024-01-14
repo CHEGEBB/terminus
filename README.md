@@ -20,7 +20,7 @@ Terminus is an advanced Python-based voice-controlled assistant designed to stre
 
 - **Reminders:** Set and manage reminders effortlessly through voice commands.
 
-- **System Information: Access detailed information about your system with voice-activated queries.
+- **System Information:** Access detailed information about your system with voice-activated queries.
 
 Getting Started 🚦
 Clone the repository:
