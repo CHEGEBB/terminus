@@ -19,4 +19,5 @@ azure-cognitiveservices-language-translator==0.10.0
 gtts==2.2.1
 pygame==2.1.2
 pydub==0.26.6
-
+feedparser==6.0.8
+pyjokes==0.6.0
