@@ -34,6 +34,36 @@ Terminus is not your ordinary terminal assistant; it's a powerhouse of functiona
 
 - **Stay Informed:** Get the latest news updates, magically spoken by Terminus.
 
+- **Weather Forecast:** Fetch the current weather information with a voice command.
+
+- **Translation:** Terminus can translate text, making language barriers disappear.
+
+- **Task Automation:** Execute various tasks, from downloading wallpapers to telling jokes, just by speaking.
+
+## Commands 🗣️
+
+Terminus understands a variety of voice commands to perform actions:
+
+- **Open Google:** `open google`
+- **Open YouTube:** `open youtube`
+- **Open Gmail:** `open gmail`
+- **Open GitHub:** `open github`
+- **Open Stack Overflow:** `open stackoverflow`
+- **Open WhatsApp:** `open whatsapp`
+- **Open Commands Folder:** `open commands folder`
+- **Open Terminal:** `open terminal`
+- **Open Text Editor:** `open text editor`
+- **Open File Manager:** `open file manager`
+- **Configure Voice Commands:** `configure voice commands`
+- **Display System Information:** `display system information` or `system info`
+- **Open Chatbot:** `open chatbot`
+- **Search:** `search` or `what is` or `tell me about`
+- **Weather:** `weather` or `forecast`
+- **Translate:** `translate`
+- **Exit:** `exit`
+- **Execute Task:** `execute task`
+- ... and many more!
+
 ## Getting Started 🚦
 
 1. **Clone the repository:**
