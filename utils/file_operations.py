@@ -2,7 +2,8 @@
 
 import os
 import speech_recognition as sr
-from utils import text_to_speech
+import pyttsx3
+import text_to_speech
 
 recognizer = sr.Recognizer()
 
