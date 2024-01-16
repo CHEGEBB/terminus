@@ -7,7 +7,7 @@ import sys
 import speech_recognition as sr
 import pyttsx3
 from commands import mkdir, rmdir, mkfile, rmfile, cd, ls, lsa, lsl, lsla, cpfile, mvfile, cpdir, mvdir, rnfile, rndir, openfile, opendir, openwith, findfile, finddir
-from utils import system_info, web_search, automation, reminders, text_to_speech, translation, weather, file_operations, chatbot, media_control, task_automation, learning
+from utils import system_info, web_search, automation, reminders,  text_to_speech, translation, weather, file_operations, chatbot, media_control, task_automation, learning
 
 # Initializing pyttsx3 and speech recognition
 engine = pyttsx3.init()
@@ -46,6 +46,8 @@ def execute_command(command_name, args):
             speak("Command not executed successfully")
     else:
         speak("Command not found")
+
+        
 
 def open_google():
     speak("Opening Google")
@@ -187,54 +189,13 @@ def execute_weather():
 
 def execute_translation():
     translation.main()
+def file_operations_main():
+    speak("Opening file operations. Please give file operations command.")
+    while True:
+        command = take_command().lower()
 def execute_task_automation(task_name):
     speak("Which task automation would you like to execute?")
     task_name = take_command().lower()
-def tell_joke():
-    speak("Here is a joke for you:")
-    chat_bot = chatbot.ChatBot()
-    chat_bot.tell_joke()
-
-def find_recipe(food):
-    speak(f"Finding recipe for {food}")
-    chat_bot = chatbot.ChatBot()
-    chat_bot.find_recipe(food)
-
-def get_and_speak_news(voice_id):
-    speak("Fetching latest news...")
-    chat_bot = chatbot.ChatBot()
-    chat_bot.get_and_speak_news(voice_id)
-
-def download_image(url, base_url, count):
-    try:
-        # Get the image URL
-        image_url = web_search.get_image_url(url, base_url)
-        
-        # Download the image
-        file_operations.download_image(image_url, count)
-    except Exception as e:
-        print(f"Error: {e}")
-        speak("Something went wrong while downloading the image. Please try again.")
-    
-def perform_system_maintenance():
-    # Delete temporary files
-    file_operations.delete_temporary_files()
-    
-    # Delete temporary folders
-    file_operations.delete_temporary_folders()
-    
-    # Delete temporary registry keys
-    file_operations.delete_temporary_registry_keys()
-
-def find_all_html_pages(url):
-    # Get all the HTML pages
-    all_pages = web_search.find_all_html_pages(url)
-    
-    # Print the HTML pages
-    for page in all_pages:
-        print(page['href'])
-    
-    return all_pages
 
 if __name__ == "__main__":
     speak("Hello! I am Terminus, your terminal voice assistant.")
@@ -296,41 +257,9 @@ if __name__ == "__main__":
             command_executed()
         elif 'exit' in query:
             speak("Thank You")
-            sys.exit() 
-        elif 'execute task' in query:
-            # Ask for the task name
-            speak("Which task automation would you like to execute?")
-            task_name = take_command().lower()
-
-            if 'download wallpaper' in task_name:
-                speak("Downloading wallpapers. Please wait.")
-                # Implement download_image function
-                # Loop through pages and download images
-                speak("Wallpapers downloaded successfully and stored in the wallpapers folder.")
-                command_executed()
-
-            elif 'perform system maintenance' in task_name:
-                speak("Performing system maintenance. Please wait.")
-                # Implement perform_system_maintenance function
-                command_executed()
-
-            elif 'tell me a joke' in task_name or 'hey terminus tell me a joke' in task_name or 'I am sad' in task_name:
-                # Implement tell_joke function
-                tell_joke()
-                command_executed()
-
-            elif 'find recipe for' in task_name:
-                # Implement find_recipe function
-                food = task_name.split('find recipe for')[1].strip()
-                find_recipe(food)
-                command_executed()
-
-            elif 'keep me updated' in task_name or 'latest news' in task_name:
-                # Implement get_and_speak_news function
-                get_and_speak_news(voice_id=1)  # Set voice_id to the index of the desired voice
-                command_executed()
-
-            else:
-                command_not_found()
-
+            sys.exit()  
+        elif 'file operations' in query:
+            file_operations_main()
+        else:
+            command_not_found()
             speak("What else can I help you with?")
