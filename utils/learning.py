@@ -3,9 +3,11 @@ import json
 import random
 import pyttsx3
 import speech_recognition as sr
+from googleapiclient.discovery import build
 
 QUOTES_API_KEY = '5puUUckdHEGxeyzdyHuDhaP4FN0EGfR3RGC1OkwX'
 NASA_API_KEY = '7k4b22cjrbbjg29R1VBDzEfebZkO2BRBim3mtUTX'
+GOOGLE_BOOKS_API_KEY = 'AIzaSyDXn8j-bYJoojOqy303i4oGU_PKVTRhzzU'
 
 # Initializing pyttsx3 and speech recognition
 engine = pyttsx3.init()
@@ -156,11 +158,26 @@ def quotes_of_the_day():
     else:
         speak("Failed to connect to the They Said So Quotes API.")
 
-# Placeholder for book recommendations API
+# Google Books API for Book Recommendations
 def book_recommendations():
     # Implement book recommendations using an external API
     # Example: Google Books API - https://developers.google.com/books
-    pass
+    
+    # Google Books API endpoint
+    google_books_api = build('books', 'v1', developerKey=GOOGLE_BOOKS_API_KEY)
+
+    # Fetching book recommendations
+    response = google_books_api.volumes().list(q='programming', orderBy='relevance').execute()
+    
+    if 'items' in response:
+        books = response['items'][:5]  # Displaying the top 5 book recommendations
+        speak("Here are some recommended programming books:")
+        for book in books:
+            title = book['volumeInfo']['title']
+            author = ', '.join(book['volumeInfo']['authors'])
+            speak(f"{title} by {author}")
+    else:
+        speak("Failed to connect to the Google Books API.")
 
 # Placeholder for geography quiz API
 def geography_quiz():
@@ -181,6 +198,8 @@ if __name__ == "__main__":
             science_facts()
         elif 'quotes of the day' in query:
             quotes_of_the_day()
+        elif 'book recommendations' in query:
+            book_recommendations()
         elif 'exit' in query:
             speak("Thank you for learning with me. Have a great day!")
             break
