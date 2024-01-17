@@ -260,6 +260,9 @@ if __name__ == "__main__":
             sys.exit()  
         elif 'file operations' in query:
             file_operations_main()
+        elif any(phrase in query for phrase in ['I want to learn', 'teach me', 'educate me', 'learn']):
+            learning.main()  # Call the main function from learning.py
+            command_executed()    
         else:
             command_not_found()
             speak("What else can I help you with?")
