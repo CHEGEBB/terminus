@@ -7,7 +7,9 @@ import sys
 import speech_recognition as sr
 import pyttsx3
 from commands import mkdir, rmdir, mkfile, rmfile, cd, ls, lsa, lsl, lsla, cpfile, mvfile, cpdir, mvdir, rnfile, rndir, openfile, opendir, openwith, findfile, finddir
-from utils import system_info, web_search, automation, reminders,  text_to_speech, translation, weather, file_operations, chatbot, media_control, task_automation, learning
+from utils import system_info, web_search, automation, reminders,  text_to_speech, translation, weather, file_operations, chatbot, media_control
+from utils import learning
+from utils import task_automation
 
 # Initializing pyttsx3 and speech recognition
 engine = pyttsx3.init()
@@ -197,6 +199,24 @@ def execute_task_automation(task_name):
     speak("Which task automation would you like to execute?")
     task_name = take_command().lower()
 
+def execute_reminders():
+    reminders.main()
+
+def execute_media_control():
+    media_control.main()
+
+def execute_automation():
+    automation.main()
+
+def execute_text_to_speech():
+    text_to_speech.main()
+
+def execute_file_operations():
+    file_operations.main()
+
+def execute_learning():
+    learning.main()
+
 if __name__ == "__main__":
     speak("Hello! I am Terminus, your terminal voice assistant.")
     speak("How may I assist you?")
@@ -260,9 +280,38 @@ if __name__ == "__main__":
             sys.exit()  
         elif 'file operations' in query:
             file_operations_main()
-        elif any(phrase in query for phrase in ['I want to learn', 'teach me', 'educate me', 'learn']):
-            learning.main()  # Call the main function from learning.py
-            command_executed()    
+            command_executed()
+        elif 'task automation' in query:
+          speak("Which task automation would you like to execute?")
+          task_name = take_command().lower()
+
+          if task_name != "None":  # Check if take_command() was successful
+              if 'perform system maintenance' in task_name:
+                 speak("Performing system maintenance. Please wait.")
+                 task_automation.perform_system_maintenance()
+                 command_executed()
+              elif 'tell me a joke' in task_name or 'hey terminus tell me a joke' in task_name or 'I am sad' in task_name:
+                 task_automation.tell_joke()
+                 command_executed()
+              elif 'find recipe for' in task_name:
+                 food = task_name.split('find recipe for')[1].strip()
+                 task_automation.find_recipe(food)
+                 command_executed()
+              elif 'keep me updated' in task_name or 'latest news' in task_name:
+                 task_automation.get_and_speak_news(voice_id=1)  # Set voice_id to the index of the desired voice
+                 command_executed()
+              elif 'convert video to audio' in task_name:
+                speak("Sure! Please provide the full path of the video file.")
+                video_path = input("Video Path: ")
+                task_automation.convert_video_to_audio(video_path, 'audio')
+                command_executed()
+              else:
+                speak("Invalid task automation. Please try again.")
         else:
+              speak("Error recognizing the command. Please try again.")
+elif any(phrase in query for phrase in ['I want to learn', 'teach me', 'educate me', 'learn']):
+          learning.main()  # Call the main function from learning.py
+          command_executed() 
+else:
             command_not_found()
             speak("What else can I help you with?")
