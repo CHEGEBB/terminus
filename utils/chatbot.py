@@ -1,17 +1,17 @@
-# utils/chatbot.py
-
 import wolframalpha
 import wikipedia
 import webbrowser
 import pyttsx3
 import speech_recognition as sr
 from googlesearch import search
+from utils.task_automation import *
 
-class ChatBot:  # Change the class name to ChatBot
+class ChatBot:
     def __init__(self):
         self.client = wolframalpha.Client("P77UTR-K3RUYA3HJT")
         self.recognizer = sr.Recognizer()
         self.engine = pyttsx3.init()
+        self.task_automation = TaskAutomation()  # Initialize TaskAutomation object
 
     def speak(self, audio):
         self.engine.say(audio)
@@ -76,6 +76,8 @@ class ChatBot:  # Change the class name to ChatBot
                     self.speak(f"There are many things related to {topic}. Kindly specify which one.")
                 except wikipedia.exceptions.PageError as pe:
                     self.speak(f"Sorry, I couldn't find information about {topic} on Wikipedia.")
+            elif 'perform task automation' in query:
+                self.task_automation.perform_task_automation()  # Call the method from the TaskAutomation class
             elif 'exit' in query:
                 self.speak("Thank you. Have a great day!")
                 break
@@ -83,5 +85,5 @@ class ChatBot:  # Change the class name to ChatBot
                 self.speak("I'm here to help. Please ask me something or give me a command.")
 
 if __name__ == "__main__":
-    chatbot = ChatBot()  # Change the instance name to ChatBot
+    chatbot = ChatBot()
     chatbot.main_loop()
