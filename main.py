@@ -48,7 +48,26 @@ def execute_command(command_name, args):
             speak("Command not executed successfully")
     else:
         speak("Command not found")
+def take_command():
+    try:
+        with sr.Microphone() as source:
+            print("Listening...")
+            recognizer.pause_threshold = 1
+            audio = recognizer.listen(source)
+            print("Recognizing...")
+            query = recognizer.recognize_google(audio, language='en-in')
+            print(query)
 
+            # Check for phrases related to alarm
+            if 'set alarm' in query or 'alarm' in query:
+                alarm_module = __import__('alarm')  # Import the alarm.py script
+                alarm_module.set_alarm()
+
+            return query.lower()
+    except Exception as e:
+        print(e)
+        print("Say that again please...")
+        return "None"
         
 
 def open_google():
