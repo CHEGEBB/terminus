@@ -1,8 +1,8 @@
 # Terminus - Unleash the Power of Your Voice! 🚀🗣️
 
-Terminus is not your ordinary terminal assistant; it's a powerhouse of functionality brought to life by the magic of your voice. With Terminus, you can transform mundane terminal tasks into exciting, voice-activated adventures. From opening websites to performing complex system operations, Terminus is your ultimate voice-controlled companion.
+Terminus is no ordinary terminal assistant; it's a voice-activated powerhouse designed to transform your mundane terminal tasks into thrilling adventures. Your voice is the magic wand that empowers Terminus, making it the ultimate voice-controlled companion for your terminal journey.
 
-**Note: Terminus is a dynamic project with ongoing enhancements. Your contributions are welcome to make it even more extraordinary!**
+**Note: Terminus is a dynamic project with ongoing enhancements. Your contributions are welcomed to make it even more extraordinary!**
 
 ## Features & Capabilities 🌟
 
@@ -27,6 +27,16 @@ Terminus is not your ordinary terminal assistant; it's a powerhouse of functiona
 - **Quotes of the Day:** Receive inspirational quotes daily through the They Said So Quotes API.
 - **Book Recommendations:** Discover popular books and recommendations using the Google Books API.
 
+### Additional Enchantments 🌠
+
+#### Screen Recording 🎥
+
+- **Record Your Magic Moments:** Capture your terminal sessions by saying `record screen` or `record`.
+
+#### Alarm Setting ⏰
+
+- **Set Alarms with Your Voice:** Wake up to the sound of magic by saying `alarm` or `set alarm`.
+
 ## Commands 🗣️
 
 Terminus understands a variety of voice commands to perform actions:
@@ -45,12 +55,12 @@ Terminus understands a variety of voice commands to perform actions:
 - **Translate:** `translate`
 - **Exit:** `exit`
 - **Execute Task:** `execute task`
-- learning section ,activate by saying one  of this `'I want to learn', 'teach me', 'educate me', 'learn'`and then proceed with the below
-- **Trivia Quiz:** `trivia quiz`
-- **Science Facts:** `science facts`
-- **Quotes of the Day:** `quotes of the day`
-- **Book Recommendations:** `book recommendations`
-- ... and many more!
+- Learning section, activate by saying one of these `'I want to learn', 'teach me', 'educate me', 'learn'`, and then proceed with the below:
+  - **Trivia Quiz:** `trivia quiz`
+  - **Science Facts:** `science facts`
+  - **Quotes of the Day:** `quotes of the day`
+  - **Book Recommendations:** `book recommendations`
+  - ... and many more!
 
 ## Getting Started 🚦
 
