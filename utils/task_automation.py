@@ -1,3 +1,6 @@
+ #task_automation.py
+
+
 import os
 import subprocess
 import pyttsx3
@@ -9,14 +12,15 @@ from tabulate import tabulate
 from xml.dom.minidom import parseString
 import pandas as pd
 import moviepy.editor as editor
+from dotenv import load_dotenv
 
 # Initializing pyttsx3 and speech recognition
 engine = pyttsx3.init()
 recognizer = sr.Recognizer()
 
 # Edamam API Key and App ID
-EDAMAM_API_KEY = "ce30ea103c3ed92880e2c84380c9c6e3"
-EDAMAM_APP_ID = "31669350"
+EDAMAM_API_KEY = os.getenv('EDAMAM_API_KEY')
+EDAMAM_APP_ID = os.getenv('EDAMAM_APP_ID')
 
 # Function to speak
 def speak(audio, voice_id=None):
@@ -155,7 +159,7 @@ def get_and_speak_news(term="latest news", count=5, voice_id=None):
 def find_recipe(food):
     try:
         # Making the API call
-        response = requests.get(f"https://api.edamam.com/search?q={food}&app_id={EDAMAM_APP_ID}&app_key={EDAMAM_API_KEY}")
+        response = requests.get(f"https://api.edamam.com/search?q={food}&app_id={os.getenv('EDAMAM_APP_ID')}&app_key={os.getenv('EDAMAM_API_KEY')}")
         data = response.json()
         
         # Storing the recipe titles and URLs

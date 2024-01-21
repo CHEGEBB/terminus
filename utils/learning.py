@@ -5,10 +5,12 @@ import pyttsx3
 import speech_recognition as sr
 from tabulate import tabulate  # Import the tabulate module
 import time
+import os 
+from dotenv import load_dotenv 
 
-QUOTES_API_KEY = '5puUUckdHEGxeyzdyHuDhaP4FN0EGfR3RGC1OkwX'
-NASA_API_KEY = '7k4b22cjrbbjg29R1VBDzEfebZkO2BRBim3mtUTX'
-GOOGLE_BOOKS_API_KEY = 'AIzaSyDXn8j-bYJoojOqy303i4oGU_PKVTRhzzU'
+QUOTES_API_KEY =os.getenv('QUOTES_API_KEY')
+NASA_API_KEY = os.getenv('NASA_API_KEY')
+GOOGLE_BOOKS_API_KEY = os.getenv('GOOGLE_BOOKS_API_KEY')
 
 # Initializing pyttsx3 and speech recognition
 engine = pyttsx3.init()
@@ -117,7 +119,7 @@ def take_trivia_answer(recognizer):
 
 # Science Facts using NASA API
 def science_facts():
-    nasa_api_url = f"https://api.nasa.gov/planetary/apod?api_key={NASA_API_KEY}"
+    nasa_api_url = f"https://api.nasa.gov/planetary/apod?api_key={os.getenv(NASA_API_KEY)}"
 
     response = requests.get(nasa_api_url)
     if response.status_code == 200:
@@ -129,7 +131,7 @@ def science_facts():
 
 # Quotes of the Day using They Said So Quotes API
 def quotes_of_the_day():
-    quotes_api_url = f"https://quotes.rest/qod?category=inspire&api_key={QUOTES_API_KEY}"
+    quotes_api_url = f"https://quotes.rest/qod?category=inspire&api_key={os.getenv(QUOTES_API_KEY)}"
 
     response = requests.get(quotes_api_url)
     if response.status_code == 200:
@@ -142,7 +144,7 @@ def quotes_of_the_day():
 # Google Books API for Book Recommendations
 def book_recommendations():
     # Fetching book recommendations from Google Books API
-    google_books_api_url = f"https://www.googleapis.com/books/v1/volumes?q=subject:programming&key={GOOGLE_BOOKS_API_KEY}"
+    google_books_api_url = f"https://www.googleapis.com/books/v1/volumes?q=subject:programming&key={os.getenv(GOOGLE_BOOKS_API_KEY)}"
     response = requests.get(google_books_api_url)
 
     if response.status_code == 200:

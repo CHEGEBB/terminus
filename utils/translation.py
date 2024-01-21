@@ -2,9 +2,10 @@ import requests
 import speech_recognition as sr
 import pyttsx3
 import uuid
+import os
 
 # Constants for Azure Translator API
-subscription_key = "d23efa668ba24f0392e903d6988ad9a4"
+subscription_key = os.getenv("AZURE_TRANSLATOR_API_KEY")
 endpoint = "https://api.cognitive.microsofttranslator.com/"
 
 # Initialize text-to-speech engine
@@ -21,10 +22,11 @@ def speak(text, voice_id=None):
 def translate_text(text, from_lang, to_lang):
     """Translates text using Azure Translator API."""
     headers = {
-        'Ocp-Apim-Subscription-Key': subscription_key,
-        'Content-type': 'application/json',
-        'X-ClientTraceId': str(uuid.uuid4())
-    }
+    'Ocp-Apim-Subscription-Key': os.getenv("AZURE_TRANSLATOR_API_KEY"),
+    'Content-type': 'application/json',
+    'X-ClientTraceId': str(uuid.uuid4())
+             }
+
     params = {
         'api-version': '3.0',
         'from': from_lang,

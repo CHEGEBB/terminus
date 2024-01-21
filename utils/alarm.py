@@ -64,4 +64,3 @@ class VoiceAlarm:
 if __name__ == '__main__':
     alarm_system = VoiceAlarm()
     alarm_system.set_alarm()
-

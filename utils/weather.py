@@ -5,6 +5,7 @@ import pyttsx3
 from rich.console import Console
 from rich.progress import Progress
 from tabulate import tabulate
+from dotenv import load_dotenv
 
 console = Console()
 
@@ -123,7 +124,12 @@ def text_to_speech(text):
     engine.runAndWait()
 
 def main():
-    api_key = "aaf06191d54d5d7adcf736c7380775ce"  # Replace with your actual API key
+    load_dotenv()
+    
+    api_key = os.getenv("WEATHER_API_KEY")
+    if not api_key:
+        print("Error: Weather API key not found in the environment variables.")
+        exit(1)
 
     welcome_message()
 
@@ -143,6 +149,9 @@ def main():
                 f"{weather_data['weather'][0]['description']}."
             )
             text_to_speech(response_text)
+        #function to exit the program
+        if city_name == "exit":
+            exit()
 
 if __name__ == "__main__":
     main()

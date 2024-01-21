@@ -5,10 +5,12 @@ import pyttsx3
 import speech_recognition as sr
 from googlesearch import search
 from utils.task_automation import *
+import os
+from dotenv import load_dotenv
 
 class ChatBot:
     def __init__(self):
-        self.client = wolframalpha.Client("P77UTR-K3RUYA3HJT")
+        self.client = wolframalpha.Client(os.getenv("WOLFRAM_ALPHA_API_KEY"))
         self.recognizer = sr.Recognizer()
         self.engine = pyttsx3.init()
         self.task_automation = TaskAutomation()  # Initialize TaskAutomation object
