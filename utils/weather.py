@@ -6,6 +6,7 @@ from rich.console import Console
 from rich.progress import Progress
 from tabulate import tabulate
 from dotenv import load_dotenv
+import os
 
 console = Console()
 
