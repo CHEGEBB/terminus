@@ -13,7 +13,7 @@ class ChatBot:
         self.client = wolframalpha.Client(os.getenv("WOLFRAM_ALPHA_API_KEY"))
         self.recognizer = sr.Recognizer()
         self.engine = pyttsx3.init()
-        self.task_automation = TaskAutomation()  # Initialize TaskAutomation object
+        self.task_automation = task_automation() 
 
     def speak(self, audio):
         self.engine.say(audio)
